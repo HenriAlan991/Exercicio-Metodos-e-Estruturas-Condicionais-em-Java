@@ -2,11 +2,12 @@ public class App{
     // CÒDIGO PRINCIPAL
     public static void main(String[] args) {
         // Tenta ativar o modo soneca
-        acionarSoneca(3);
+        String mensagem = acionarAlarme(12, 35);
+        System.out.println(mensagem);
         
     }
 
-
+    // método static que retorna um valor booleano que se chama acionarSoneca e precisa de um argumento int chamado tempo
     static boolean acionarSoneca(int tempo){
         if (tempo <= 20 && tempo >= 1){
         System.out.println("Seu alarme foi adiado por mais " + tempo + ":00" + " minutos no modo soneca.");
@@ -22,6 +23,15 @@ public class App{
             return false;
         }
     }
+
+    static String acionarAlarme(int horas, int minutos){
+        String horario = horas + ":" + minutos;
+        String mensagem = "Seu alarme foi adiado para as: " + horario;
+        return mensagem;
+
+
+    }
+
 
     
 }
